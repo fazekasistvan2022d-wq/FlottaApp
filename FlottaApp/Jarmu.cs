@@ -10,14 +10,19 @@ namespace FlottaApp
     {
         public string Rendszam { get; set; }
         protected int alapar;
-        public int Alapar { get { return alapar; }
+        public int Alapar
+        {
+            get { return alapar; }
             set
             {
                 if (value <= 0)
                 {
                     alapar = 1_000_000;
                 }
-                alapar = value;
+                else
+                {
+                    alapar = value;
+                }
             }
         }
         private static int osszesJarmuSzama = 0;
@@ -27,9 +32,9 @@ namespace FlottaApp
         {
             osszesJarmuSzama++;
             Rendszam = rendszam;
-            this.alapar = alapar;
+            Alapar = alapar;
         }
-        
+
         public virtual int Adokalkulacio()
         {
             double szam = Math.Round(alapar * 0.05);
@@ -40,6 +45,6 @@ namespace FlottaApp
         {
             return $"Jármű: {Rendszam} | Alapár: {alapar} Ft | Adó: {Adokalkulacio()} Ft";
         }
-    
+
     }
 }

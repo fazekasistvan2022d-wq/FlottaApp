@@ -9,7 +9,7 @@ namespace FlottaApp
     public class Teherauto : Jarmu
     {
         public double Teherbiras { get; set; }
-        public Teherauto(string rendszam, int alapar, double teherbiras) : base(rendszam,alapar)
+        public Teherauto(string rendszam, int alapar, double teherbiras) : base(rendszam, alapar)
         {
             Teherbiras = teherbiras;
         }
@@ -20,7 +20,7 @@ namespace FlottaApp
         }
         public override string ToString()
         {
-            return base.ToString()+$"| Teherbírás: {Teherbiras} t";
+            return base.ToString() + $"| Teherbírás: {Teherbiras} t";
         }
 
     }
